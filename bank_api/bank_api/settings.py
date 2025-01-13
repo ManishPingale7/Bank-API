@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,16 +78,24 @@ WSGI_APPLICATION = 'bank_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'banker_rkiv',  # Database name
-        'USER': 'postgress',  # Username
-        'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',  # Password
-        # Host (Render's PostgreSQL URL without the protocol part)
-        'HOST': 'dpg-cu2foi3v2p9s738su080-a',
-        'PORT': '5432',  # Port (default PostgreSQL port)
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://postgress:DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF@dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com/banker_rkiv',
+        conn_max_age=600
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'banker_rkiv',  # Database name
+#         'USER': 'postgress',  # Username
+#         'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',  # Password
+#         # Host (Render's PostgreSQL URL without the protocol part)
+#         'HOST': 'dpg-cu2foi3v2p9s738su080-a',
+#         'PORT': '5432',  # Port (default PostgreSQL port)
+#     }
+# }
 
 # if DEBUG:
 #     DATABASES = {
