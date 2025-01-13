@@ -79,11 +79,12 @@ WSGI_APPLICATION = 'bank_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'banker_rkiv',
-        'USER': 'postgress',
-        'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',
-        'HOST': 'dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'NAME': 'banker_rkiv',  # Database name
+        'USER': 'postgress',  # Username
+        'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',  # Password
+        # Host (Render's PostgreSQL URL without the protocol part)
+        'HOST': 'dpg-cu2foi3v2p9s738su080-a',
+        'PORT': '5432',  # Port (default PostgreSQL port)
     }
 }
 
