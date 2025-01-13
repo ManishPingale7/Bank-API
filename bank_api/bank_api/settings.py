@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e_kt9p*z*5kb#xa0f-zpj(_c@&@^u52_%81ajhyyxd5l#n8k8@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -76,31 +76,32 @@ WSGI_APPLICATION = 'bank_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'banker',
-            'USER': 'postgres',
-            'PASSWORD': 'admin',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'banker_rkiv',
+        'USER': 'postgress',
+        'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',
+        'HOST': 'dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'banker_rkiv',
-            'USER': 'postgress',
-            'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',
-            'HOST': 'dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com',
-            'PORT': '5432',
-        }
-    }
+}
 
-    # Password validation
-    # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'banker',
+#             'USER': 'postgres',
+#             'PASSWORD': 'admin',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
+# else:
+
+# Password validation
+# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
