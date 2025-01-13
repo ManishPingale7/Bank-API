@@ -94,7 +94,7 @@ else:
             'NAME': 'banker_rkiv',
             'USER': 'postgress',
             'PASSWORD': 'DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF',
-            'HOST': 'dpg-cu2foi3v2p9s738su080-a',
+            'HOST': 'dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com',
             'PORT': '5432',
         }
     }
