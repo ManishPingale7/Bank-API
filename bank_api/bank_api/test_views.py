@@ -13,11 +13,11 @@ class BranchApiTests(APITestCase):
         Branch.objects.create(ifsc="SBIN0005678", branch="Second Branch", address="456 Second St",
                               city="City", district="District", state="State", bank=bank)
 
-    def test_get_all_branches(self):
-        """Test GET all branches."""
+    def test_get_all_banks(self):
+        """Test GET all bank."""
         response = self.client.get('/api/bank/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        # should have 2 branches in the response
+        # should have 1 bank in the response
         self.assertEqual(len(response.data), 1)
 
     def test_get_branch_by_ifsc(self):

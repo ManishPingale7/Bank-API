@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,12 +78,20 @@ WSGI_APPLICATION = 'bank_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgress:DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF@dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com/banker_rkiv',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "final.db",
+    }
 }
+
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://postgress:DVG6rqWEoe0Xji7mYyak1VbXzH9mbivF@dpg-cu2foi3v2p9s738su080-a.oregon-postgres.render.com/banker_rkiv',
+#         conn_max_age=600
+#     )
+# }
 
 # DATABASES = {
 #     'default': {
@@ -97,18 +105,17 @@ DATABASES = {
 #     }
 # }
 
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'banker',
-#             'USER': 'postgres',
-#             'PASSWORD': 'admin',
-#             'HOST': 'localhost',
-#             'PORT': '5432',
-#         }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'banker',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
-# else:
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
